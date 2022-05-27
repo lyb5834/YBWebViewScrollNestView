@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AF914D7283F7E3F00C22789 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914D6283F7E3F00C22789 /* AppDelegate.m */; };
+		4AF914DA283F7E3F00C22789 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914D9283F7E3F00C22789 /* SceneDelegate.m */; };
+		4AF914DD283F7E3F00C22789 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914DC283F7E3F00C22789 /* ViewController.m */; };
+		4AF914E0283F7E3F00C22789 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF914DE283F7E3F00C22789 /* Main.storyboard */; };
+		4AF914E2283F7E4000C22789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF914E1283F7E4000C22789 /* Assets.xcassets */; };
+		4AF914E5283F7E4000C22789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF914E3283F7E4000C22789 /* LaunchScreen.storyboard */; };
+		4AF914E8283F7E4000C22789 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914E7283F7E4000C22789 /* main.m */; };
+		4AF914F0283F7E5B00C22789 /* YBWebViewScrollNestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914EF283F7E5B00C22789 /* YBWebViewScrollNestView.m */; };
+		4AF914F42840871D00C22789 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914F32840871D00C22789 /* TestModel.m */; };
+		89BA933DB967409DB08171A2 /* Pods_YBWebViewScrollNestView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73995C14EB0E11F4129200A8 /* Pods_YBWebViewScrollNestView.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		254EDFF996942677F7970ECF /* Pods-YBWebViewScrollNestView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBWebViewScrollNestView.release.xcconfig"; path = "Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView.release.xcconfig"; sourceTree = "<group>"; };
+		3F862CC4C4FF253622A05E19 /* Pods-YBWebViewScrollNestView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBWebViewScrollNestView.debug.xcconfig"; path = "Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView.debug.xcconfig"; sourceTree = "<group>"; };
+		4AF914D2283F7E3F00C22789 /* YBWebViewScrollNestView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBWebViewScrollNestView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF914D5283F7E3F00C22789 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4AF914D6283F7E3F00C22789 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AF914D8283F7E3F00C22789 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		4AF914D9283F7E3F00C22789 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		4AF914DB283F7E3F00C22789 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4AF914DC283F7E3F00C22789 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4AF914DF283F7E3F00C22789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AF914E1283F7E4000C22789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AF914E4283F7E4000C22789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4AF914E6283F7E4000C22789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF914E7283F7E4000C22789 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4AF914EE283F7E5B00C22789 /* YBWebViewScrollNestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBWebViewScrollNestView.h; sourceTree = "<group>"; };
+		4AF914EF283F7E5B00C22789 /* YBWebViewScrollNestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBWebViewScrollNestView.m; sourceTree = "<group>"; };
+		4AF914F22840871D00C22789 /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
+		4AF914F32840871D00C22789 /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		73995C14EB0E11F4129200A8 /* Pods_YBWebViewScrollNestView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBWebViewScrollNestView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AF914CF283F7E3F00C22789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BA933DB967409DB08171A2 /* Pods_YBWebViewScrollNestView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D59010681A41E39C2E61D95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73995C14EB0E11F4129200A8 /* Pods_YBWebViewScrollNestView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AF914C9283F7E3F00C22789 = {
+			isa = PBXGroup;
+			children = (
+				4AF914D4283F7E3F00C22789 /* YBWebViewScrollNestView */,
+				4AF914D3283F7E3F00C22789 /* Products */,
+				979EB987815EF87838B30589 /* Pods */,
+				2D59010681A41E39C2E61D95 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4AF914D3283F7E3F00C22789 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AF914D2283F7E3F00C22789 /* YBWebViewScrollNestView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AF914D4283F7E3F00C22789 /* YBWebViewScrollNestView */ = {
+			isa = PBXGroup;
+			children = (
+				4AF914D5283F7E3F00C22789 /* AppDelegate.h */,
+				4AF914D6283F7E3F00C22789 /* AppDelegate.m */,
+				4AF914D8283F7E3F00C22789 /* SceneDelegate.h */,
+				4AF914D9283F7E3F00C22789 /* SceneDelegate.m */,
+				4AF914DB283F7E3F00C22789 /* ViewController.h */,
+				4AF914DC283F7E3F00C22789 /* ViewController.m */,
+				4AF914F22840871D00C22789 /* TestModel.h */,
+				4AF914F32840871D00C22789 /* TestModel.m */,
+				4AF914F128405F7000C22789 /* YBWebViewScrollNestView */,
+				4AF914DE283F7E3F00C22789 /* Main.storyboard */,
+				4AF914E1283F7E4000C22789 /* Assets.xcassets */,
+				4AF914E3283F7E4000C22789 /* LaunchScreen.storyboard */,
+				4AF914E6283F7E4000C22789 /* Info.plist */,
+				4AF914E7283F7E4000C22789 /* main.m */,
+			);
+			path = YBWebViewScrollNestView;
+			sourceTree = "<group>";
+		};
+		4AF914F128405F7000C22789 /* YBWebViewScrollNestView */ = {
+			isa = PBXGroup;
+			children = (
+				4AF914EE283F7E5B00C22789 /* YBWebViewScrollNestView.h */,
+				4AF914EF283F7E5B00C22789 /* YBWebViewScrollNestView.m */,
+			);
+			path = YBWebViewScrollNestView;
+			sourceTree = "<group>";
+		};
+		979EB987815EF87838B30589 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F862CC4C4FF253622A05E19 /* Pods-YBWebViewScrollNestView.debug.xcconfig */,
+				254EDFF996942677F7970ECF /* Pods-YBWebViewScrollNestView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AF914D1283F7E3F00C22789 /* YBWebViewScrollNestView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AF914EB283F7E4000C22789 /* Build configuration list for PBXNativeTarget "YBWebViewScrollNestView" */;
+			buildPhases = (
+				6E74FA503E69B09D9D23F531 /* [CP] Check Pods Manifest.lock */,
+				4AF914CE283F7E3F00C22789 /* Sources */,
+				4AF914CF283F7E3F00C22789 /* Frameworks */,
+				4AF914D0283F7E3F00C22789 /* Resources */,
+				5A32F1D8B7020BE080100A12 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YBWebViewScrollNestView;
+			productName = YBWebViewScrollNestView;
+			productReference = 4AF914D2283F7E3F00C22789 /* YBWebViewScrollNestView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AF914CA283F7E3F00C22789 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					4AF914D1283F7E3F00C22789 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4AF914CD283F7E3F00C22789 /* Build configuration list for PBXProject "YBWebViewScrollNestView" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AF914C9283F7E3F00C22789;
+			productRefGroup = 4AF914D3283F7E3F00C22789 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AF914D1283F7E3F00C22789 /* YBWebViewScrollNestView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AF914D0283F7E3F00C22789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF914E5283F7E4000C22789 /* LaunchScreen.storyboard in Resources */,
+				4AF914E2283F7E4000C22789 /* Assets.xcassets in Resources */,
+				4AF914E0283F7E3F00C22789 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A32F1D8B7020BE080100A12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E74FA503E69B09D9D23F531 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YBWebViewScrollNestView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AF914CE283F7E3F00C22789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF914DD283F7E3F00C22789 /* ViewController.m in Sources */,
+				4AF914D7283F7E3F00C22789 /* AppDelegate.m in Sources */,
+				4AF914F0283F7E5B00C22789 /* YBWebViewScrollNestView.m in Sources */,
+				4AF914F42840871D00C22789 /* TestModel.m in Sources */,
+				4AF914E8283F7E4000C22789 /* main.m in Sources */,
+				4AF914DA283F7E3F00C22789 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4AF914DE283F7E3F00C22789 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AF914DF283F7E3F00C22789 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4AF914E3283F7E4000C22789 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AF914E4283F7E4000C22789 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AF914E9283F7E4000C22789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4AF914EA283F7E4000C22789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AF914EC283F7E4000C22789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F862CC4C4FF253622A05E19 /* Pods-YBWebViewScrollNestView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JEAGCUN8WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YBWebViewScrollNestView/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.webViewScrollNest.YBWebViewScrollNestView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AF914ED283F7E4000C22789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 254EDFF996942677F7970ECF /* Pods-YBWebViewScrollNestView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JEAGCUN8WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YBWebViewScrollNestView/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lee.webViewScrollNest.YBWebViewScrollNestView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AF914CD283F7E3F00C22789 /* Build configuration list for PBXProject "YBWebViewScrollNestView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF914E9283F7E4000C22789 /* Debug */,
+				4AF914EA283F7E4000C22789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AF914EB283F7E4000C22789 /* Build configuration list for PBXNativeTarget "YBWebViewScrollNestView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF914EC283F7E4000C22789 /* Debug */,
+				4AF914ED283F7E4000C22789 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AF914CA283F7E3F00C22789 /* Project object */;
+}

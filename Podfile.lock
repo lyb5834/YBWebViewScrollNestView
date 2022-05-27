@@ -1,0 +1,24 @@
+PODS:
+  - LookinServer (1.0.4)
+  - Masonry (1.1.0)
+  - MJRefresh (3.7.5)
+
+DEPENDENCIES:
+  - LookinServer
+  - Masonry
+  - MJRefresh
+
+SPEC REPOS:
+  https://cdn.cocoapods.org/:
+    - LookinServer
+    - Masonry
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+
+PODFILE CHECKSUM: d817911065d3bf8e7efb628521261df28925b55f
+
+COCOAPODS: 1.11.2
