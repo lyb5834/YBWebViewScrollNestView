@@ -194,14 +194,18 @@
         if ([change[NSKeyValueChangeNewKey] CGPointValue].y == [change[NSKeyValueChangeOldKey] CGPointValue].y) { return; }
         
         CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        [self removeContentOffsetObserver];
         self.webView.scrollView.contentOffset = contentOffset;
+        [self addContentOffsetObserver];
         [self analysisContentOffset];
     }else if (object == self.webView.scrollView && [keyPath isEqualToString:@"contentOffset"]) {
          
         if ([change[NSKeyValueChangeNewKey] CGPointValue].y == [change[NSKeyValueChangeOldKey] CGPointValue].y) { return; }
         
         CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        [self removeContentOffsetObserver];
         self.tableView.contentOffset = contentOffset;
+        [self addContentOffsetObserver];
         [self analysisContentOffset];
     }
 }
