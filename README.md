@@ -1,7 +1,16 @@
 # YBWebViewScrollNestView
-WKWebView和UITableView混排解决方案
+WKWebView和UITableView嵌套解决方案
 
-根据 [@xuning0](https://www.jianshu.com/p/42858f95ab43) 的idea优化而来，毕竟那个文章比较古老，现在`UIWebView`已经退出了历史舞台，现在有了更高效的`WKWebView` 
+# 优点
+内存占用少
+滑动流畅
+未禁用任何滑动，对网页的适配性高
+
+# 缺点
+不能设置`tableHeaderView`
+
+# 原理
+[工作原理及各框架优缺点对比]（https://www.jianshu.com/p/8b3ef3ad3cc6）
 
  # CocoaPods支持
  * 只需在podfile中输入 `pod 'YBWebViewScrollNestView'` 即可

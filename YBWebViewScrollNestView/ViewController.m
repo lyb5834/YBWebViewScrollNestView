@@ -44,7 +44,7 @@ WKNavigationDelegate
         make.bottom.equalTo(self.bottomView.mas_top);
     }];
     
-    NSString * urlPath = @"https://www.zhihu.com";
+    NSString * urlPath = @"https://www.jianshu.com/p/2ov8x3";
     [self.webView loadRequest:[NSURLRequest requestWithURL:[self getUrlWithString:urlPath]]];
     
     [self dataInit];
