@@ -10,6 +10,7 @@
 #import "MJRefresh.h"
 #import "Masonry.h"
 #import "TestModel.h"
+#import "MYTableView.h"
 
 @interface ViewController ()
 <
@@ -23,7 +24,7 @@ WKNavigationDelegate
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (nonatomic, strong) YBWebViewScrollNestView * nestView;
 @property (nonatomic, strong) WKWebView * webView;
-@property (nonatomic, strong) YBNestTableView * tableView;
+@property (nonatomic, strong) MYTableView * tableView;
 @property (nonatomic, strong) NSMutableArray <TestModel *>* dataArray;
 
 @end
@@ -72,7 +73,7 @@ WKNavigationDelegate
     }
     
     //模拟延迟
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
     });
@@ -95,10 +96,10 @@ WKNavigationDelegate
     return _nestView;
 }
 
-- (YBNestTableView *)tableView
+- (MYTableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[YBNestTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[MYTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         
@@ -196,7 +197,7 @@ WKNavigationDelegate
     return self.webView;
 }
 
-- (YBNestTableView *)tableViewInContainer
+- (UITableView<YBNestTableViewProtocol> *)tableViewInContainer
 {
     return self.tableView;
 }

@@ -8,7 +8,10 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
-@class YBNestTableView;
+//需要嵌套的tableView必须遵循此协议
+@protocol YBNestTableViewProtocol <NSObject>
+@end
+
 @protocol YBWebViewScrollNestViewContainerDelegate <NSObject>
 
 @optional
@@ -30,7 +33,7 @@
 /**
  tableView backgroundColor会置成透明色 且 改tableview 不能添加 tableHeaderView
  */
-- (YBNestTableView *)tableViewInContainer;
+- (UITableView <YBNestTableViewProtocol> *)tableViewInContainer;
 
 @end
 
@@ -50,8 +53,3 @@
 - (void)reloadView;
 
 @end
-
-@interface YBNestTableView : UITableView
-
-@end
-

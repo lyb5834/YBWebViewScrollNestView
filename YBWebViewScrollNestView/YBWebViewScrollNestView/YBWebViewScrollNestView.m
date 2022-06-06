@@ -6,11 +6,12 @@
 //
 
 #import "YBWebViewScrollNestView.h"
+#import <objc/runtime.h>
 
 @interface YBWebViewScrollNestView ()
 
 @property (nonatomic, strong) WKWebView * webView;
-@property (nonatomic, strong) YBNestTableView * tableView;
+@property (nonatomic, strong) UITableView <YBNestTableViewProtocol> * tableView;
 @property (nonatomic, weak) id<YBWebViewScrollNestViewContainerDelegate> delegate;
 @property (nonatomic, strong) UIView * tableHeaderView;
 @property (nonatomic, assign) BOOL isWebViewVisible;
@@ -223,15 +224,52 @@
 
 @end
 
+@interface UITableView (YBEvent)
+@end
 
-@implementation YBNestTableView
+@implementation UITableView (YBEvent)
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event {
-    BOOL ret = [super pointInside:point withEvent:event];
-    if (CGRectContainsPoint(self.tableHeaderView.frame, point)) {
-        return NO;
++ (void)load
+{
+    SEL originSelector = @selector(pointInside:withEvent:);
+    SEL newSelector = @selector(yb_pointInside:withEvent:);
+    YBExchangeImplementationsInTwoClasses([self class], originSelector, [self class], newSelector);
+}
+
+- (BOOL)yb_pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event
+{
+    BOOL ret = [self yb_pointInside:point withEvent:event];
+    BOOL conformsToProtocol = [self conformsToProtocol:@protocol(YBNestTableViewProtocol)];
+    if (conformsToProtocol) {
+        if (CGRectContainsPoint(self.tableHeaderView.frame, point)) {
+            return NO;
+        }
     }
     return ret;
+}
+
+BOOL
+YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Class _toClass, SEL _newSelector) {
+    if (!_fromClass || !_toClass) {
+        return NO;
+    }
+    
+    Method oriMethod = class_getInstanceMethod(_fromClass, _originSelector);
+    Method newMethod = class_getInstanceMethod(_toClass, _newSelector);
+    if (!newMethod) {
+        return NO;
+    }
+    
+    BOOL isAddedMethod = class_addMethod(_fromClass, _originSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
+    if (isAddedMethod) {
+        // 如果 class_addMethod 成功了，说明之前 fromClass 里并不存在 originSelector，所以要用一个空的方法代替它，以避免 class_replaceMethod 后，后续 toClass 的这个方法被调用时可能会 crash
+        IMP oriMethodIMP = method_getImplementation(oriMethod) ?: imp_implementationWithBlock(^(id selfObject) {});
+        const char *oriMethodTypeEncoding = method_getTypeEncoding(oriMethod) ?: "v@:";
+        class_replaceMethod(_toClass, _newSelector, oriMethodIMP, oriMethodTypeEncoding);
+    } else {
+        method_exchangeImplementations(oriMethod, newMethod);
+    }
+    return YES;
 }
 
 @end
