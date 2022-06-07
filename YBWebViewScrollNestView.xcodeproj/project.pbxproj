@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A1396F5284DD0D5000C779B /* MYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1396F4284DD0D5000C779B /* MYTableView.m */; };
 		4AF914D7283F7E3F00C22789 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914D6283F7E3F00C22789 /* AppDelegate.m */; };
 		4AF914DA283F7E3F00C22789 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914D9283F7E3F00C22789 /* SceneDelegate.m */; };
 		4AF914DD283F7E3F00C22789 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF914DC283F7E3F00C22789 /* ViewController.m */; };
@@ -23,8 +22,6 @@
 /* Begin PBXFileReference section */
 		254EDFF996942677F7970ECF /* Pods-YBWebViewScrollNestView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBWebViewScrollNestView.release.xcconfig"; path = "Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView.release.xcconfig"; sourceTree = "<group>"; };
 		3F862CC4C4FF253622A05E19 /* Pods-YBWebViewScrollNestView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBWebViewScrollNestView.debug.xcconfig"; path = "Target Support Files/Pods-YBWebViewScrollNestView/Pods-YBWebViewScrollNestView.debug.xcconfig"; sourceTree = "<group>"; };
-		4A1396F3284DD0D5000C779B /* MYTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYTableView.h; sourceTree = "<group>"; };
-		4A1396F4284DD0D5000C779B /* MYTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYTableView.m; sourceTree = "<group>"; };
 		4AF914D2283F7E3F00C22789 /* YBWebViewScrollNestView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBWebViewScrollNestView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF914D5283F7E3F00C22789 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AF914D6283F7E3F00C22789 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,8 +88,6 @@
 				4AF914D9283F7E3F00C22789 /* SceneDelegate.m */,
 				4AF914DB283F7E3F00C22789 /* ViewController.h */,
 				4AF914DC283F7E3F00C22789 /* ViewController.m */,
-				4A1396F3284DD0D5000C779B /* MYTableView.h */,
-				4A1396F4284DD0D5000C779B /* MYTableView.m */,
 				4AF914F22840871D00C22789 /* TestModel.h */,
 				4AF914F32840871D00C22789 /* TestModel.m */,
 				4AF914F128405F7000C22789 /* YBWebViewScrollNestView */,
@@ -237,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A1396F5284DD0D5000C779B /* MYTableView.m in Sources */,
 				4AF914DD283F7E3F00C22789 /* ViewController.m in Sources */,
 				4AF914D7283F7E3F00C22789 /* AppDelegate.m in Sources */,
 				4AF914F0283F7E5B00C22789 /* YBWebViewScrollNestView.m in Sources */,

@@ -10,7 +10,6 @@
 #import "MJRefresh.h"
 #import "Masonry.h"
 #import "TestModel.h"
-#import "MYTableView.h"
 
 @interface ViewController ()
 <
@@ -24,7 +23,7 @@ WKNavigationDelegate
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (nonatomic, strong) YBWebViewScrollNestView * nestView;
 @property (nonatomic, strong) WKWebView * webView;
-@property (nonatomic, strong) MYTableView * tableView;
+@property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray <TestModel *>* dataArray;
 
 @end
@@ -45,7 +44,7 @@ WKNavigationDelegate
         make.bottom.equalTo(self.bottomView.mas_top);
     }];
     
-    NSString * urlPath = @"https://www.jianshu.com/p/2ov8x3";
+    NSString * urlPath = @"https://article.xuexi.cn/articles/index.html?art_id=16839459196239307151&source=share&study_style_id=feeds_opaque&reco_id=101c0b0a2412c0a88442000j&share_to=copylink&study_share_enable=1&study_comment_disable=1&ptype=0&item_id=16839459196239307151";
     [self.webView loadRequest:[NSURLRequest requestWithURL:[self getUrlWithString:urlPath]]];
     
     [self dataInit];
@@ -96,10 +95,10 @@ WKNavigationDelegate
     return _nestView;
 }
 
-- (MYTableView *)tableView
+- (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[MYTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         
@@ -197,7 +196,7 @@ WKNavigationDelegate
     return self.webView;
 }
 
-- (UITableView<YBNestTableViewProtocol> *)tableViewInContainer
+- (UITableView *)tableViewInContainer
 {
     return self.tableView;
 }
