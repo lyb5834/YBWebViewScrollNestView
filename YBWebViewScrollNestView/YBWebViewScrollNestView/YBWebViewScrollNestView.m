@@ -111,6 +111,32 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     return self;
 }
 
+- (void)reloadView
+{
+    [self updateFrames];
+}
+
+- (void)scrollToTopAnimated:(BOOL)animated
+{
+    [self.webView.scrollView setContentOffset:CGPointMake(0, 0) animated:animated];
+}
+
+- (void)scrollToBottomAnimated:(BOOL)animated
+{
+    [self.webView.scrollView setContentOffset:CGPointMake(0, self.webView.scrollView.contentSize.height + self.webView.scrollView.contentInset.bottom - self.webView.frame.size.height) animated:animated];
+}
+
+- (void)scrollToTableViewAnimated:(BOOL)animated
+{
+    CGPoint contentOffset = CGPointMake(0, self.webView.scrollView.contentSize.height);
+    if (self.webView.scrollView.contentInset.bottom < self.webView.frame.size.height) {
+        contentOffset = CGPointMake(0, self.webView.scrollView.contentSize.height - (self.webView.frame.size.height - self.webView.scrollView.contentInset.bottom));
+    }
+    [self.webView.scrollView setContentOffset:contentOffset animated:animated];
+}
+
+#pragma mark - privites
+
 - (void)loadView
 {
     self.webView = [self.delegate webViewInContainer];
@@ -129,11 +155,6 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    [self updateFrames];
-}
-
-- (void)reloadView
-{
     [self updateFrames];
 }
 

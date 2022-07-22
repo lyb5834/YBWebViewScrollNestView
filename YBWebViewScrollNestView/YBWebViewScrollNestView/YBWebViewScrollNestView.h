@@ -46,6 +46,12 @@
 
 - (instancetype)initWithDelegate:(id<YBWebViewScrollNestViewContainerDelegate>)delegate;
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id<YBWebViewScrollNestViewContainerDelegate>)delegate;
+/**
+ 滚动到顶部、底部、tableView位置，必须等网页加载完了调用！！！
+ */
+- (void)scrollToTopAnimated:(BOOL)animated;
+- (void)scrollToBottomAnimated:(BOOL)animated;
+- (void)scrollToTableViewAnimated:(BOOL)animated;
 - (void)reloadView;
 
 @end

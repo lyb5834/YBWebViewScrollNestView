@@ -25,6 +25,7 @@ WKNavigationDelegate
 @property (nonatomic, strong) WKWebView * webView;
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray <TestModel *>* dataArray;
+@property (nonatomic, strong) UIButton *rightButton;
 
 @end
 
@@ -39,6 +40,9 @@ WKNavigationDelegate
     self.title = @"首页";
     [self.view addSubview:self.nestView];
     
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
     [self.nestView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.bottom.equalTo(self.bottomView.mas_top);
@@ -48,6 +52,13 @@ WKNavigationDelegate
     [self.webView loadRequest:[NSURLRequest requestWithURL:[self getUrlWithString:urlPath]]];
     
     [self dataInit];
+    
+    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)dealloc
+{
+    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
 
 - (void)dataInit
@@ -84,6 +95,27 @@ WKNavigationDelegate
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     return [NSURL URLWithString:(NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, (CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]", NULL,kCFStringEncodingUTF8))];
 #pragma clang diagnostic pop
+}
+
+- (void)onRightAction:(UIButton *)button
+{
+    if ([button.currentTitle isEqualToString:@"显示评论"]) {
+        [button setTitle:@"回到顶部" forState:UIControlStateNormal];
+        [self.nestView scrollToTableViewAnimated:YES];
+    }else {
+        [button setTitle:@"显示评论" forState:UIControlStateNormal];
+        [self.nestView scrollToTopAnimated:YES];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        double estimatedProgress = [change[NSKeyValueChangeNewKey] doubleValue];
+        if (estimatedProgress == 1) {
+            self.rightButton.enabled = YES;
+        }
+    }
 }
 
 #pragma mark - lazyloads
@@ -154,6 +186,19 @@ WKNavigationDelegate
     return _dataArray;
 }
 
+- (UIButton *)rightButton
+{
+    if (!_rightButton) {
+        _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightButton.frame = CGRectMake(0, 0, 60, 44);
+        [_rightButton setTitle:@"显示评论" forState:UIControlStateNormal];
+        [_rightButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_rightButton addTarget:self action:@selector(onRightAction:) forControlEvents:UIControlEventTouchUpInside];
+        _rightButton.enabled = NO;
+    }
+    return _rightButton;
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -185,9 +230,11 @@ WKNavigationDelegate
     TestModel * model = self.dataArray[indexPath.row];
     model.isCellDeveloped = !model.isCellDeveloped;
     
-    [tableView beginUpdates];
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [tableView endUpdates];
+    if (!tableView.mj_footer.isRefreshing) {
+        [tableView beginUpdates];
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+    }
 }
 
 #pragma mark - YBWebViewScrollNestViewContainerDelegate
