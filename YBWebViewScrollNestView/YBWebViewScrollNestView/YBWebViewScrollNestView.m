@@ -70,7 +70,12 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
 
 @end
 
-
+typedef NS_ENUM(NSInteger, YBKeyBoardState) {
+    YBKeyBoardStateWillShow,
+    YBKeyBoardStateDidShow,
+    YBKeyBoardStateWillHide,
+    YBKeyBoardStateDidHide
+};
 
 @interface YBWebViewScrollNestView ()
 
@@ -80,6 +85,7 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
 @property (nonatomic, strong) UIView * tableHeaderView;
 @property (nonatomic, assign) BOOL isWebViewVisible;
 @property (nonatomic, assign) BOOL isTableViewVisible;
+@property (nonatomic, assign) YBKeyBoardState keyboardState;
 
 @end
 
@@ -89,6 +95,7 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
 {
     [self removeContentSizeObserver];
     [self removeContentOffsetObserver];
+    [self removeKeyBoardObserver];
 }
 
 - (instancetype)initWithDelegate:(id<YBWebViewScrollNestViewContainerDelegate>)delegate
@@ -96,6 +103,7 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     self = [super init];
     if (self) {
         self.delegate = delegate;
+        self.keyboardState = YBKeyBoardStateDidHide;
         [self loadView];
     }
     return self;
@@ -106,6 +114,7 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     self = [super initWithFrame:frame];
     if (self) {
         self.delegate = delegate;
+        self.keyboardState = YBKeyBoardStateDidHide;
         [self loadView];
     }
     return self;
@@ -150,6 +159,7 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     
     [self addContentSizeObserver];
     [self addContentOffsetObserver];
+    [self addKeyBoardObserver];
 }
 
 - (void)layoutSubviews
@@ -223,6 +233,26 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     }
 }
 
+- (void)keyboardWillShow:(NSNotification *)notify
+{
+    self.keyboardState = YBKeyBoardStateWillShow;
+}
+
+- (void)keyboardDidShow:(NSNotification *)notify
+{
+    self.keyboardState = YBKeyBoardStateDidShow;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notify
+{
+    self.keyboardState = YBKeyBoardStateWillHide;
+}
+
+- (void)keyboardDidHide:(NSNotification *)notify
+{
+    self.keyboardState = YBKeyBoardStateDidHide;
+}
+
 #pragma mark - Observers
 - (void)addContentSizeObserver
 {
@@ -260,6 +290,22 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
     [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
+- (void)addKeyBoardObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void)removeKeyBoardObserver
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if (object == self.webView.scrollView && [keyPath isEqualToString:@"contentSize"]) {
 
@@ -291,7 +337,12 @@ YBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
         
         CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
         [self removeContentOffsetObserver];
-        self.tableView.contentOffset = contentOffset;
+        // 解决第一次键盘升起时 contentOffset 位置不正确的问题
+        if (self.keyboardState == YBKeyBoardStateDidShow ||
+            self.keyboardState == YBKeyBoardStateDidHide ||
+            self.keyboardState == YBKeyBoardStateWillHide) {
+            self.tableView.contentOffset = contentOffset;
+        }
         [self addContentOffsetObserver];
         [self analysisContentOffset];
     }

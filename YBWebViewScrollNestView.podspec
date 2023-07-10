@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YBWebViewScrollNestView"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "wkWebView和tableView混排最新解决方案"
   s.description  = "wkWView和tableView混排最新解决方案，一键集成"
   s.homepage     = "https://github.com/lyb5834/YBWebViewScrollNestView.git"
